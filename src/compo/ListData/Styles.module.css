@@ -1,0 +1,9 @@
+.list{
+margin:20px auto;
+border: 1px solid #000000;
+width: 60%;
+cursor: pointer;
+}
+.list:nth-of-type(odd){
+    background-color: gainsboro;
+}
