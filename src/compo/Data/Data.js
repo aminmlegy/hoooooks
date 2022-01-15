@@ -25,16 +25,22 @@ export default function Data() {
       rate: 10,
     },
   ]);
-  const [valu, setValu] = useState("");
-  const inputVal = (name) => {
-    setValu(name);
+  const [valu, setValu] = useState({ name: "", rate: 10 });
+  const inputVal = (name, rate) => {
+    setValu((prevee) => {
+      return { ...prevee, name: name, rate: rate };
+    });
   };
   const AddNewData = (NewObj) => {
     setData((prev) => [...prev, NewObj]);
   };
   const chec = () => {
     if (valu.length !== 0) {
-      return data.filter((ele) => ele.name.includes(valu));
+      return data.filter(
+        (ele) =>
+          ele.name.toLowerCase().includes(valu.name.toLocaleLowerCase()) &&
+          ele.rate <= valu.rate
+      );
     } else {
       return data;
     }

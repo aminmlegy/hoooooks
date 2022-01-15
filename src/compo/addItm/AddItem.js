@@ -3,7 +3,7 @@ import styled from "./input.module.css";
 export default function AddItem({ AddNew }) {
   const [Addsaved, setAdd] = useState({
     name: "",
-    rate: undefined,
+    rate: 0,
   });
   const setName = (e) => {
     const saved = e.target.value;
